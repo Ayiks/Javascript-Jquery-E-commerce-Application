@@ -14,6 +14,42 @@
 
     <!-- custom css -->
     <link rel="stylesheet" href="styles.css">
+    <script>
+      // // function getData(){
+      // //   var str = localStorage.getItem('cart');
+      // //   if(str != null)
+      // //   arr = JSON.parse(str);
+
+      // // }
+      // // function showData(){
+      // //   getData();
+
+      // //   var tbl = document.querySelector("myTable");
+      // //   for(i=0;i<arr.length; i++){
+      // //     var r = tbl.insertRow();
+      // //     var cell1= r.insertCell();
+      // //     var cell1= r.insertCell();
+      // //     var cell1= r.insertCell();
+        
+      // //   cell1.innerHtML = arr[i].pid;
+      // //   cell1.innerHtML = arr[i].pid;
+      // //   cell1.innerHtML = arr[i].pid;   
+      // //   };
+      // }
+
+      var retrieveObject = JSON.parse(localStorage.getItem('cart'));
+
+      var tbody = document.getElementById('tbody');
+      for (var i = 0; i < retrievedObject.length; i++) {
+  var tr = "<tr>";
+  tr += "<td>Name</td>" + "<td>" + retrievedObject[i].name + "</td></tr>";
+  tr += "<td>Score</td>" + "<td>" + retrievedObject[i].score + "</td></tr>";
+  tr += "<td>Time</td>" + "<td>" + retrievedObject[i].time + "</td></tr>";
+  tbody.innerHTML += tr;
+}
+    </script>
+
+    
   </head>
   <body>
    <!-- navbar -->
@@ -36,42 +72,38 @@
    <!-- products -->
    <section class="products">
      <div class="section-title">
-       <h2>our products</h2>
+       <h2>Checkout</h2>
      </div>
-     <div class="products-center">
-       
-
-     </div>
+    <div class="card">
+      <div class="table-responsive">
+        <table class="table table-strped table-hover myTable">
+          <thead>
+            <tr>
+              <th>
+                Products
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th>
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tr>
+           <tbody class="tbody"></tbody>
+          </tr>
+        </table>
+      </div>
+    </div>
    </section>
    <!-- end of products -->
-   <!-- cart -->
-   <div class="cart-overlay">
-    <div class="cart">
-      <span class="close-cart">
-        <i class="fas fa-window-close"></i>
-      </span>
-      <h2>your cart</h2>
-      <div class="cart-content">
-        <!-- cart item -->
-        
-        <!-- end of cart item -->
-      </div>
-      <div class="cart-footer">
-        <h3>your total : $ <span class="cart-total">0</span></h3>
-        <button class="clear-cart banner-btn">clear cart</button>
-        <form action="details.html">
-          <input type="submit" class="clear-cart banner-btn" value="View & Checkout"></input>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-  <!-- end of cart -->
-
+   
+  
       <script src="app.js"></script>
-    
+   
 
-    
+    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -84,3 +116,4 @@
     -->
   </body>
 </html>
+
